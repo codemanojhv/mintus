@@ -65,7 +65,10 @@ class _HomePageState extends State<HomePage> {
           height: 10,
 
           unselectedItemColor: const Color.fromARGB(179, 0, 0, 0),
-          backgroundColor: Colors.black.withOpacity(0.1),
+          backgroundColor: const Color.fromARGB(255, 145, 145, 145).withOpacity(0.1),
+          
+          outlineBorderColor:   const Color.fromARGB(122, 197, 197, 197),
+          
           enableFloatingNavBar: true,
           onTap: _handleIndexChanged,
           items: [
