@@ -10,7 +10,7 @@ class Homepage1 extends StatefulWidget {
 
   @override
   State<Homepage1> createState() => _Homepage1State();
-}
+} 
 
 class _Homepage1State extends State<Homepage1>  with SingleTickerProviderStateMixin  {
   final name = "Manoj";

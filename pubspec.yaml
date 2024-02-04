@@ -41,6 +41,7 @@ dependencies:
   gusto_neumorphic: ^3.3.0
   light: ^3.0.1
   styled_widget: ^0.4.1
+  visibility_detector: ^0.4.0+2
  
 
 
@@ -68,16 +69,16 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - lib/icons/home.svg
-    - lib/icons/settings.svg 
-    - lib/icons/calander.svg
-    - lib/icons/active_home.svg
-    - lib/icons/active_settings.svg
-    - lib/icons/active_calander.svg 
-    - lib/icons/person.svg
-    - lib/icons/folder.svg
-    - lib/images/folder.png
+  #assets:
+  #  - lib/icons/home.svg
+  #  - lib/icons/settings.svg 
+  #  - lib/icons/calander.svg
+  #  - lib/icons/active_home.svg
+  #  - lib/icons/active_settings.svg
+  #  - lib/icons/active_calander.svg 
+  #  - lib/icons/person.svg
+  #  - lib/icons/folder.svg
+  #  - lib/images/folder.png
     
  
      
