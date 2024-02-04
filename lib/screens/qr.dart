@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           
-          Text('ウエルカム') // Vertical text
+          const Text('ウエルカム') // Vertical text
               .textColor(Color(0xff44517F))
               .fontSize(28)
               .bold()
@@ -21,14 +21,14 @@ class Home extends StatelessWidget {
               Styled.icon(Icons.qr_code_scanner,
               color: Colors.amber), // red circle,
           Styled.widget() // red circle
-              .backgroundColor(Color.fromARGB(255, 255, 0, 0))
+              .backgroundColor(const Color.fromARGB(255, 255, 0, 0))
               .constrained(width: 200, height: 200)
               .clipOval()
               .gestures(
                 onTap: () => showBottomSheet(
                   context: context,
-                  backgroundColor: Color.fromARGB(0, 0, 0, 0),
-                  builder: (BuildContext context) => BottomSheet1(),
+                  backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+                  builder: (BuildContext context) => const BottomSheet1(),
                 ),
               ),
         ],
@@ -49,7 +49,7 @@ class BottomSheet1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Text('サインアップ') // button
+        const Text('サインアップ') // button
             .textColor(Color.fromARGB(255, 255, 255, 255))
             .fontSize(24)
             .padding(vertical: 15, horizontal: 30)
@@ -58,7 +58,7 @@ class BottomSheet1 extends StatelessWidget {
               borderRadius: BorderRadius.circular(35),
             )
             .gestures(onTap: () => Navigator.pop(context)),
-        Text('サインイン') // bottom description
+        const Text('サインイン') // bottom description
             .fontSize(18)
             .textColor(Color.fromARGB(255, 255, 255, 255))
             .padding(vertical: 30),

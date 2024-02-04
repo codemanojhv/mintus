@@ -2,9 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:mintus/utilities/navbar.dart';
-import 'screens/settingspage.dart';
-import 'screens/timetablepage.dart';
-
 void main() {
   runApp(const MyApp());
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mintus/utilities/cards.dart';
 import 'drawer.dart';
 
 class TimetablePage extends StatelessWidget {
@@ -34,13 +33,13 @@ class TimetablePage extends StatelessWidget {
           },
         ),
         centerTitle: true,
-        backgroundColor:  Color.fromARGB(218, 2, 189, 27),
+        backgroundColor:  const Color.fromARGB(218, 2, 189, 27),
         title: const Text(
           'Home',
           style: TextStyle(fontSize: 18.0, color: Colors.white),
         ),
       ),
-      backgroundColor:  Color.fromARGB(218, 2, 189, 27),
+      backgroundColor:  const Color.fromARGB(218, 2, 189, 27),
       body: Container(
         decoration: const BoxDecoration(
           color: Color.fromRGBO(255, 255, 255, 0.815),

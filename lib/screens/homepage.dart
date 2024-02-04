@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:gusto_neumorphic/gusto_neumorphic.dart';
 import 'package:iconly/iconly.dart';
@@ -10,9 +8,10 @@ class Homepage1 extends StatefulWidget {
 
   @override
   State<Homepage1> createState() => _Homepage1State();
-} 
+}
 
-class _Homepage1State extends State<Homepage1>  with SingleTickerProviderStateMixin  {
+class _Homepage1State extends State<Homepage1>
+    with TickerProviderStateMixin, WidgetsBindingObserver {
   final name = "Manoj";
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -20,13 +19,12 @@ class _Homepage1State extends State<Homepage1>  with SingleTickerProviderStateMi
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
 
     _controller = AnimationController(
       duration: const Duration(seconds: 2), // Change the duration as needed
       vsync: this,
     );
-
-   
 
     _animation = Tween<double>(begin: 0, end: 1).animate(_controller)
       ..addListener(() {
@@ -36,7 +34,15 @@ class _Homepage1State extends State<Homepage1>  with SingleTickerProviderStateMi
     _controller.forward();
   }
 
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.resumed) {
+      _controller.reset();
+      _controller.forward();
 
+    } 
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,25 +52,23 @@ class _Homepage1State extends State<Homepage1>  with SingleTickerProviderStateMi
         // Add your logic here to navigate to 0th index
         return true;
       },
-      child: Scaffold(
+      child: Scaffold( 
           body: Stack(
         children: [
-          AnimatedOpacity(
-            opacity: _animation.value,
+          FadeTransition(
+            opacity: _controller,
+            alwaysIncludeSemantics: true,
             
-            duration:   _controller.duration ?? const Duration(seconds: 1),
             child: Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                   
-                    const Color.fromARGB(48, 21, 4, 255), // Change this to your preferred shade of purple
-                    const Color.fromARGB(0, 155, 39, 176).withOpacity(
-                        0.0), // This will make the purple color gradually become transparent
+                    Color.fromARGB(47, 17, 0, 255), // Change this to your preferred shade of purple
+                   // Color.fromARGB(255, 155, 39, 176).withOpacity( 0.5), // This will make the purple color gradually become transparent
                     Colors
                         .transparent, // This will make the color completely transparent at the bottom
                   ],
@@ -109,9 +113,11 @@ class _Homepage1State extends State<Homepage1>  with SingleTickerProviderStateMi
                       InkWell(
                         onTap: () {
                           Navigator.push(
-                                          context,
-                                          MaterialPageRoute(builder: (context) => const NotificationScreen()),
-                                        );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const NotificationScreen()),
+                          );
                         },
                         child: Container(
                           width: 40,
@@ -186,9 +192,8 @@ class _Homepage1State extends State<Homepage1>  with SingleTickerProviderStateMi
 
   @override
   void dispose() {
-   
-    _controller.dispose();
-    
+    WidgetsBinding.instance.removeObserver(this);
+
     super.dispose();
   }
 }

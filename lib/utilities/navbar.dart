@@ -3,7 +3,6 @@
 import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:light/light.dart';
 import 'package:mintus/screens/qr.dart';
 
 import '../screens/homepage.dart';
